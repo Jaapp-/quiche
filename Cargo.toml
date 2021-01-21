@@ -16,12 +16,6 @@ include = [
     "/CODEOWNERS",
     "/COPYING",
     "/benches",
-    "/deps/boringssl/**/*.[chS]",
-    "/deps/boringssl/**/*.asm",
-    "/deps/boringssl/src/**/*.cc",
-    "/deps/boringssl/**/CMakeLists.txt",
-    "/deps/boringssl/**/sources.cmake",
-    "/deps/boringssl/LICENSE",
     "/examples",
     "/include",
     "/quiche.svg",
@@ -29,10 +23,6 @@ include = [
 ]
 
 [features]
-default = ["boringssl-vendored"]
-
-# Build vendored BoringSSL library.
-boringssl-vendored = []
 
 # Generate pkg-config metadata file for libquiche.
 pkg-config-meta = []
@@ -55,7 +45,7 @@ libc = "0.2"
 libm = "0.2"
 ring = "0.16"
 lazy_static = "1"
-boring-sys = { version = "1.0.2", optional = true }
+openssl-sys = "0.9.60"
 qlog = { version = "0.4", path = "tools/qlog", optional = true }
 
 [target."cfg(windows)".dependencies]
